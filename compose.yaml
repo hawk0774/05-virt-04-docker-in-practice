@@ -1,0 +1,62 @@
+include:
+  - proxy.yaml
+
+x-deploy: &create
+  deploy:
+    resources:
+      limits:
+        cpus: "1"
+        memory: 512M
+      reservations:
+        memory: 128M
+
+x-restart: &restart
+  restart: always
+
+x-env_file: &env_file
+  env_file:
+    - .env
+
+services:
+  db:
+    image: mysql:8
+    container_name: db
+    networks:
+      backend:
+        ipv4_address: 172.20.0.10
+    <<: [*create, *env_file, *restart]
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_ROOT_HOST="%"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.python
+    image: web_app:latest
+    networks:
+      backend:
+        ipv4_address: 172.20.0.5
+    <<: [*env_file, *restart]
+    environment:
+      - DB_NAME=${MYSQL_DATABASE}
+      - DB_PASSWORD=${MYSQL_PASSWORD}
+      - DB_USER=${MYSQL_USER}
+      - DB_HOST=db
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  mysql_data:
