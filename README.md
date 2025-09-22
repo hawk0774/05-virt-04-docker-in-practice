@@ -1,5 +1,17 @@
 # Домашнее задание к занятию 5. «Практическое применение Docker»
 
+## Задача 0
+1. Убедитесь что у вас НЕ(!) установлен ```docker-compose```, для этого получите следующую ошибку от команды ```docker-compose --version```
+```
+Command 'docker-compose' not found, but can be installed with:
+
+sudo snap install docker          # version 24.0.5, or
+sudo apt  install docker-compose  # version 1.25.0-1
+
+See 'snap info docker' for additional versions.
+```
+В случае наличия установленного в системе ```docker-compose``` - удалите его. 
+
 ## Задача 1
 1. Сделайте в своем GitHub пространстве fork [репозитория](https://github.com/netology-code/shvirtd-example-python).
 
