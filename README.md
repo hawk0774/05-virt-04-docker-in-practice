@@ -24,7 +24,9 @@ See 'snap info docker' for additional versions.
    - Протестируйте корректность сборки 
 3. (Необязательная часть, *) Изучите инструкцию в проекте и запустите web-приложение без использования docker, с помощью venv. (Mysql БД можно запустить в docker run).
 4. (Необязательная часть, *) Изучите код приложения и добавьте управление названием таблицы через ENV переменную.
+
 ![alt text](https://raw.githubusercontent.com/hawk0774/05-virt-04-docker-in-practice/main/Screenshot_3.png)
+
 ![alt text](https://raw.githubusercontent.com/hawk0774/05-virt-04-docker-in-practice/main/Screenshot_2.png)
 
 ## Задача 3
