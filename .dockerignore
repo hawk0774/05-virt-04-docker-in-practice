@@ -19,3 +19,4 @@ LICENSE
 *.sh
 compose.yml
 docker-compose.yml
+.png
