@@ -56,12 +56,23 @@ See 'snap info docker' for additional versions.
 5. (Необязательная часть) Дополнительно настройте remote ssh context к вашему серверу. Отобразите список контекстов и результат удаленного выполнения ```docker ps -a```
 6. Повторите SQL-запрос на сервере и приложите скриншот и ссылку на fork.
 
+![alt text](https://raw.githubusercontent.com/hawk0774/05-virt-04-docker-in-practice/main/Screenshot_6.png)
+
+![alt text](https://raw.githubusercontent.com/hawk0774/05-virt-04-docker-in-practice/main/Screenshot_7.png)
+
+![alt text](https://raw.githubusercontent.com/hawk0774/05-virt-04-docker-in-practice/main/Screenshot_8.png)
+
 ## Задача 6
 Скачайте docker образ ```hashicorp/terraform:latest``` и скопируйте бинарный файл ```/bin/terraform``` на свою локальную машину, используя dive и docker save.
 Предоставьте скриншоты  действий .
 
+![alt text](https://raw.githubusercontent.com/hawk0774/05-virt-04-docker-in-practice/main/Screenshot_9.png)
+
+![alt text](https://raw.githubusercontent.com/hawk0774/05-virt-04-docker-in-practice/main/Screenshot_12.png)
+
 ## Задача 6.1
 Добейтесь аналогичного результата, используя docker cp.  
 Предоставьте скриншоты  действий .
+![alt text](https://raw.githubusercontent.com/hawk0774/05-virt-04-docker-in-practice/main/Screenshot_13.png)
 
 
