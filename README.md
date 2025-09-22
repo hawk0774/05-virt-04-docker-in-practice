@@ -11,6 +11,7 @@ sudo apt  install docker-compose  # version 1.25.0-1
 See 'snap info docker' for additional versions.
 ```
 В случае наличия установленного в системе ```docker-compose``` - удалите его. 
+![alt text](https://raw.githubusercontent.com/hawk0774/05-virt-04-docker-in-practice/main/Screenshot_1.png)
 
 ## Задача 1
 1. Сделайте в своем GitHub пространстве fork [репозитория](https://github.com/netology-code/shvirtd-example-python).
